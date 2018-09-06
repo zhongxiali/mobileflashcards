@@ -66,19 +66,20 @@ class NewCard extends Component {
     this.props.navigation.goBack()
   }
   render() {
+    const { question, answer } = this.state
     return (
       <View style={{ alignItems: 'center' }}>
         <Text style={{ fontSize: 20, paddingTop: 50, paddingBottom: 30 }}>
           New Card:
         </Text>
         <TextInput
-          value=""
+          value={question}
           style={styles.input}
           placeholder="--Question--"
           onChangeText={this.handleTextChangeQuestion}
         />
         <TextInput
-          value=""
+          value={answer}
           style={styles.input}
           placeholder="--Answer--"
           onChangeText={this.handleTextChangeAnswer}

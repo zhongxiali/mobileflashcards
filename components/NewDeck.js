@@ -21,7 +21,7 @@ function SubmitBtn({ onPress }) {
       }
       onPress={onPress}
     >
-      <Text style={styles.submitBtnText}>Submit</Text>
+      <Text style={styles.submitBtnText}>Create Deck</Text>
     </TouchableOpacity>
   )
 }
@@ -47,6 +47,7 @@ class NewDeck extends Component {
         routeName: 'DeckList'
       })
     )
+    this.props.navigation.navigate('DeckView', { deckName: title })
   }
   render() {
     return (

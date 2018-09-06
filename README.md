@@ -6,6 +6,8 @@ This tool will help you memorize stuff by writing it down on flashcards and quiz
 
 ## Getting Started
 
+The project should work for both iOS and Android. However due to the limitation of device owned, the project has only been tested on iOS Platform.
+
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites

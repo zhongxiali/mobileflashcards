@@ -32,6 +32,14 @@ class QuizMode extends Component {
     clearLocalNotification().then(setLocalNotification())
     this.props.navigation.goBack()
   }
+  handleRestart = () => {
+    clearLocalNotification().then(setLocalNotification())
+    this.setState(() => ({
+      now: 1,
+      correct: 0,
+      back: false
+    }))
+  }
   render() {
     const { deckName, deck } = this.props
     const { now, correct, back } = this.state
@@ -40,7 +48,7 @@ class QuizMode extends Component {
     return (
       <View>
         <Text style={styles.count}>
-          {now}/{count}
+          {now <= count ? `${now}/${count}` : ''}
         </Text>
         {now > count ? (
           <View style={styles.center}>
@@ -49,6 +57,18 @@ class QuizMode extends Component {
                 You got {correct} out of {count} questions right!
               </Text>
               <Text style={{ color: red }}>Finished!</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.darkBtn, { backgroundColor: red }]}
+              onPress={this.handleRestart}
+            >
+              <Text style={{ color: white }}>Restart Quiz</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.darkBtn, { backgroundColor: gray }]}
+              onPress={this.handleDone}
+            >
+              <Text style={{ color: white }}>Back to Deck</Text>
             </TouchableOpacity>
           </View>
         ) : (

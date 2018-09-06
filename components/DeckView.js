@@ -33,7 +33,7 @@ class DeckView extends Component {
             this.props.navigation.navigate('QuizMode', { deckName: deckName })
           }
         >
-          <Text style={{ color: white }}>Start Quiz</Text>
+          <Text style={{ color: white }}>Start a Quiz</Text>
         </TouchableOpacity>
       </View>
     )

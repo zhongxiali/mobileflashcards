@@ -13,7 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 You need to clone this Repo on to your local machine.
 
 ```
-$ cd git clone https://github.com/zhongxiali/MobilFlashcards MobilFlashcards
+$ cd git clone https://github.com/zhongxiali/mobileflashcards MobilFlashcards
 $ cd MobilFlashcards
 ```
 

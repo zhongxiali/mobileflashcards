@@ -63,7 +63,7 @@ class NewDeck extends Component {
           What is the title of your new deck?
         </Text>
         <TextInput
-          value=""
+          value={this.state.input}
           style={styles.input}
           placeholder="New deck name"
           onChangeText={this.handleTextChange}

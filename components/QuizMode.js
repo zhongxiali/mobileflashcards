@@ -29,11 +29,11 @@ class QuizMode extends Component {
     }))
   }
   handleDone = () => {
-    clearLocalNotification().then(setLocalNotification())
+    clearLocalNotification().then(() => setLocalNotification())
     this.props.navigation.goBack()
   }
   handleRestart = () => {
-    clearLocalNotification().then(setLocalNotification())
+    clearLocalNotification().then(() => setLocalNotification())
     this.setState(() => ({
       now: 1,
       correct: 0,

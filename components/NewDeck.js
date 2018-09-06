@@ -40,6 +40,10 @@ class NewDeck extends Component {
     const deck = {
       [title]: { title: title, questions: [] }
     }
+    if (!title.trim()) {
+      alert("Deck title can't be empty")
+      return
+    }
     this.props.dispatch(addDeck(title))
     submitDeck(deck)
     this.props.navigation.dispatch(
@@ -48,6 +52,9 @@ class NewDeck extends Component {
       })
     )
     this.props.navigation.navigate('DeckView', { deckName: title })
+    this.setState(() => ({
+      input: ''
+    }))
   }
   render() {
     return (

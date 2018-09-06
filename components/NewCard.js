@@ -54,6 +54,10 @@ class NewCard extends Component {
       question: question,
       answer: answer
     }
+    if (!question.trim() || !answer.trim()) {
+      alert('Question&Answer can not be empty')
+      return
+    }
     const updatedDeck = {
       [deckName]: { ...deck, questions: deck.questions.concat(card) }
     }

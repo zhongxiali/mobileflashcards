@@ -29,11 +29,14 @@ class DeckView extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.darkBtn}
+          disabled={deck.questions.length === 0}
           onPress={() =>
             this.props.navigation.navigate('QuizMode', { deckName: deckName })
           }
         >
-          <Text style={{ color: white }}>Start a Quiz</Text>
+          <Text style={{ color: white }}>
+            {deck.questions.length === 0 ? 'No Quiz' : 'Start a Quiz<'}
+          </Text>
         </TouchableOpacity>
       </View>
     )
